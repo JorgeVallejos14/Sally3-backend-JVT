@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Participantes{% endblock %}
+
+{% block contenido %}
+    <h2>Participantes</h2>
+    <div class="lista">
+    {% for p in participantes %}
+        <div class="tarjeta">
+            <h2>{{ p.nombre|upper }}</h2>
+            <p>{{ p.especie }} · {{ p.especialidad|lower }}</p>
+            <p>Expediciones: <strong>{{ p.num_expediciones }}</strong></p>
+        </div>
+    {% empty %}
+        <p>No hay participantes registrados.</p>
+    {% endfor %}
+    </div>
+{% endblock %}

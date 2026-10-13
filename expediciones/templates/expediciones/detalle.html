@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{ expedicion.titulo }}{% endblock %}
+
+{% block contenido %}
+    <h2>{{ expedicion.titulo }}</h2>
+    <span class="estado estado-{{ expedicion.estado }}">{{ expedicion.get_estado_display }}</span>
+
+    <ul class="datos">
+        <li>Region: {{ expedicion.region.nombre }} (peligro {{ expedicion.region.nivel_peligro }}/10)</li>
+        <li>Inicio: {{ expedicion.fecha_inicio|date:"d/m/Y" }}</li>
+        <li>Duracion: {{ expedicion.duracion_dias }} dia{{ expedicion.duracion_dias|pluralize }}</li>
+    </ul>
+
+    {{ expedicion.objetivo|linebreaks }}
+
+    <h3>Participantes</h3>
+    <ul class="datos">
+    {% for p in expedicion.participantes.all %}
+        <li>{{ p.nombre }} · {{ p.especialidad }}</li>
+    {% empty %}
+        <li>Sin participantes asignados.</li>
+    {% endfor %}
+    </ul>
+
+    <h3>Informe</h3>
+    {% if expedicion.informe %}
+        <ul class="datos">
+            <li>Resultado: {{ expedicion.informe.resultado }}</li>
+            <li>Anillos recuperados: {{ expedicion.informe.anillos_recuperados }}</li>
+            <li>Heridos: {{ expedicion.informe.heridos }}</li>
+        </ul>
+        {% if expedicion.informe.heridos > 0 %}
+            <p class="aviso">Hubo heridos en esta expedicion.</p>
+        {% endif %}
+    {% else %}
+        <p class="aviso">Esta expedicion aun no tiene informe.</p>
+    {% endif %}
+
+    <a href="{% url 'expediciones:inicio' %}?region={{ expedicion.region.id }}" class="boton">Ver expediciones de {{ expedicion.region.nombre }}</a>
+    <a href="{% url 'expediciones:inicio' %}" class="boton">Volver a la portada</a>
+{% endblock %}

@@ -1,0 +1,132 @@
+body {
+    background-color: #0f2a2e;
+    color: #e6f4f1;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #0a1d20;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #f2b134;
+}
+
+header h1 {
+    color: #f2b134;
+    margin: 0 0 10px 0;
+}
+
+nav a {
+    color: #e6f4f1;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #f2b134;
+}
+
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filtros select,
+.filtros button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+.filtros button {
+    background-color: #f2b134;
+    color: #0a1d20;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filtros a {
+    color: #e6f4f1;
+    align-self: center;
+}
+
+.resumen {
+    background-color: #17454b;
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: #17454b;
+    border-radius: 10px;
+    padding: 18px;
+    width: 270px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta h2 {
+    color: #f2b134;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.tarjeta a,
+.boton {
+    display: inline-block;
+    margin-top: 8px;
+    background-color: #f2b134;
+    color: #0a1d20;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.estado {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #0a1d20;
+}
+
+.estado-plan { background-color: #9ec5fe; }
+.estado-curso { background-color: #f2b134; }
+.estado-ok { background-color: #75d9a3; }
+.estado-fallida { background-color: #ff9a9a; }
+
+.datos {
+    list-style: none;
+    padding: 0;
+}
+
+.datos li {
+    background-color: #17454b;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.aviso {
+    background-color: #4a2f12;
+    color: #ffd58a;
+    padding: 12px;
+    border-radius: 6px;
+}

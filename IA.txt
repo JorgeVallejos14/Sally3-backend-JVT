@@ -1,0 +1,1 @@
+Se ha usado IA en HTML y CSS y se verifico si todo cumple en orden y esta bien y tras la verificación se ve que el HTML y CSS estan acorde a lo pedido.
